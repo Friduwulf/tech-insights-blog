@@ -2,9 +2,13 @@
   "name": "tech-insights-blog",
   "version": "1.0.0",
   "description": "A blog where tech professionals can blog.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js"
+
   },
   "repository": {
     "type": "git",
