@@ -1,14 +1,20 @@
 [
     {
         "comment_text": "This is the first comment",
-        "date_created": "2020-01-01"
+        "date_created": "2020-01-01",
+        "user_id": 1,
+        "post_id": 1
     },
     {
         "comment_text": "This is a test comment",
-        "date_created": "2021-01-01"
+        "date_created": "2021-01-01",
+        "user_id": 2,
+        "post_id": 2
     },
     {
         "comment_text": "This comment is testing the comment functionality",
-        "date_created": "2020-03-01"
+        "date_created": "2020-03-01",
+        "user_id": 2,
+        "post_id": 2
     }
 ]
