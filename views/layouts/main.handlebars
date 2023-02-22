@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
+        <link rel="stylesheet" href="/css/style.css"/>
+        <title>Tech Insight Blog</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar is-warning level" role="navigation" aria-label="main navigation">
+                    <a class="navbar-item level-item has-text-centered" href="/views/homepage.handlebars">
+                        Home
+                    </a>
+                    <a class="navbar-item level-item has-text-centered" href="/views/dashboard.handlebars">
+                        Dashboard
+                    </a>
+                    <p class="navbar-item level-item is-size-2 has-text-centered">Tech Insight Blog</p>
+                    {{#if logged_in}}
+                    <a class="navbar-item level-item has-text-centered" id="logout">
+                        Logout
+                    </a>
+                    {{else}}
+                    <a class="navbar-item level-item has-text-centered" href="/views/login.handlebars" id="logout">
+                        Sign Up
+                    </a>
+                    {{/if}}
+                    <a class="navbar-item level-item has-text-centered is-primary" href="/views/login.handlebars" id="logout">
+                        Log In
+                    </a>
+                    </div>
+                </div>
+        </header>
+        {{!-- {{{body}}} --}}
+        <div class="columns is-centered is-multiline">
+    {{#each plainPost as |post| }}
+    <div class="column in-full-width mx-5 my-5"
+        <div class="card">
+            <div class="card-body">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-size-4">{{this.title}}</p>
+                        <hr>
+                        <p class="user is-size-6">Post by: {{this.user.name}}</p>
+                    </div>
+                </div>
+                <div class="post-contetn">
+                    <p>{{this.content}}</p>
+                    <p class="is-size-6">Date Posted: {{this.date_created}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+    </body>
+</html>
+        

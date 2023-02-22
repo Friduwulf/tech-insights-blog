@@ -1,0 +1,21 @@
+<div class="columns is-centered is-multiline">
+    {{#each plainPost as |post| }}
+    <div class="column in-full-width mx-5 my-5"
+        <div class="card">
+            <div class="card-body">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-size-4">{{this.title}}</p>
+                        <hr>
+                        <p class="user is-size-6">Post by: {{this.user.name}}</p>
+                    </div>
+                </div>
+                <div class="post-contetn">
+                    <p>{{this.content}}</p>
+                    <p class="is-size-6">Date Posted: {{this.date_created}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
