@@ -51,6 +51,16 @@ html, body {
     max-width: fit-content;
 }
 
+.dashboard-post-button {
+    background-color: var(--weird-brown);
+    color: var(--bluey);
+    margin-bottom: 1rem;
+}
+
+.dashboard-post-title, .dashboard-post-date {
+    vertical-align: middle;
+}
+
 #title {
     background-color: var(--bluey);
     color: var(--weird-brown);

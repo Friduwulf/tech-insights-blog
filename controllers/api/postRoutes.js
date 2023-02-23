@@ -27,9 +27,12 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/activePost', withAuth, async (req, res) => {
     try {
-        const postData = await Post.findByPk(req.params.id, {
+        const postData = await Post.findByPk({
+            where: {
+                id: req.session.activePostId,
+            },
             include: [
                 {
                     model: User,

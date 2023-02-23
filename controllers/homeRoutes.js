@@ -5,15 +5,6 @@ const withAuth = require('../utils/auth');
 var title = '';
 
 //-----------------Dashboard-----------------//
-//Send dashboard handlebars
-router.get('/dashboard', withAuth, async (req, res) => {
-    title = 'Dashboard';
-    res.render('dashboard', {
-        title,
-        logged_in: req.session.logged_in
-    });
-});
-
 //Get User Posts
 router.get('/dashboard', withAuth, async (req, res) => {
     try{
@@ -21,18 +12,14 @@ router.get('/dashboard', withAuth, async (req, res) => {
             where:{
                 user_id: req.session.user_id
             },
-            include: [
-                {
-                model: User
-                }],
         });
-        console.log(postData);
         const plainUserPosts = postData.map((post) => post.get({ plain: true }));
         console.log(plainUserPosts);
         title = 'Dashboard';
         res.render('dashboard', {
             plainUserPosts,
-            title
+            title,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
