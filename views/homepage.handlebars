@@ -1,18 +1,17 @@
-<div class="columns is-centered is-multiline">
-    {{#each plainPost as |post| }}
-    <div class="column in-full-width mx-5 my-5"
+<div>
+    {{#each plainPosts as |post| }}
+    <div class="card-container column is-8 is-offset-2"
         <div class="card">
             <div class="card-body">
                 <div class="media">
-                    <div class="media-content">
-                        <p class="title is-size-4">{{this.title}}</p>
-                        <hr>
-                        <p class="user is-size-6">Post by: {{this.user.name}}</p>
+                    <div class="media-content columns level">
+                        <p class="post-title column is-4 has-text-weight-bold is-size-4">{{this.title}}</p>
+                        <p class="post-user column is-4 is-offset-4 has-text-right">Post by: {{this.user.name}}</p>
                     </div>
                 </div>
-                <div class="post-contetn">
+                <div class="post-contents">
                     <p>{{this.content}}</p>
-                    <p class="is-size-6">Date Posted: {{this.date_created}}</p>
+                    <p class="is-6">Date Posted: {{this.date_created}}</p>
                 </div>
             </div>
         </div>

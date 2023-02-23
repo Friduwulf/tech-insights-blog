@@ -5,56 +5,39 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/css/style.css"/>
         <title>Tech Insight Blog</title>
     </head>
-    <body>
+    <body class="body">
         <header>
-            <nav class="navbar is-warning level" role="navigation" aria-label="main navigation">
-                    <a class="navbar-item level-item has-text-centered" href="/views/homepage.handlebars">
+            <div class="nav-box">
+                <nav class="navbar level is-transparent" role="navigation" aria-label="main navigation">
+                    <a class="navbar-item level-item has-text-centered" href="/homepage">
                         Home
                     </a>
-                    <a class="navbar-item level-item has-text-centered" href="/views/dashboard.handlebars">
+                    <a class="navbar-item level-item has-text-centered" href="/dashboard">
                         Dashboard
                     </a>
-                    <p class="navbar-item level-item is-size-2 has-text-centered">Tech Insight Blog</p>
+                    <p id="title" class="navbar-item level-item is-size-1 has-text-centered">{{title}}</p>
                     {{#if logged_in}}
                     <a class="navbar-item level-item has-text-centered" id="logout">
                         Logout
                     </a>
                     {{else}}
-                    <a class="navbar-item level-item has-text-centered" href="/views/login.handlebars" id="logout">
+                    <a class="navbar-item level-item has-text-centered" href="/login" id="signup">
                         Sign Up
                     </a>
                     {{/if}}
-                    <a class="navbar-item level-item has-text-centered is-primary" href="/views/login.handlebars" id="logout">
+                    <a class="navbar-item level-item has-text-centered is-primary" href="/login" id="logout">
                         Log In
                     </a>
-                    </div>
-                </div>
-        </header>
-        {{!-- {{{body}}} --}}
-        <div class="columns is-centered is-multiline">
-    {{#each plainPost as |post| }}
-    <div class="column in-full-width mx-5 my-5"
-        <div class="card">
-            <div class="card-body">
-                <div class="media">
-                    <div class="media-content">
-                        <p class="title is-size-4">{{this.title}}</p>
-                        <hr>
-                        <p class="user is-size-6">Post by: {{this.user.name}}</p>
-                    </div>
-                </div>
-                <div class="post-contetn">
-                    <p>{{this.content}}</p>
-                    <p class="is-size-6">Date Posted: {{this.date_created}}</p>
-                </div>
+                </nav>
             </div>
-        </div>
-    </div>
-    {{/each}}
-</div>
+        </header>
+        {{{body}}}
     </body>
 </html>
         
