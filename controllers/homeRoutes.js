@@ -1,7 +1,19 @@
 const router = require('express').Router();
 const { Comment, Post, User } = require('../models');
 const withAuth = require('../utils/auth');
+
 var title = '';
+
+//Send signup handlebars
+router.get('/signup', async (req, res) => {
+    title = 'Sign Up';
+    res.render('signup', { 
+        title,
+        logged_in: req.session.logged_in 
+    });   
+});
+
+//Get all posts for homepage
 router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll({
@@ -24,4 +36,12 @@ router.get('/', async (req, res) => {
     }
 });
 
+//Login
+router.get('/login', async (req, res) => {
+    title = 'Login';
+    res.render('login', { 
+        title,
+        logged_in: req.session.logged_in 
+    });   
+});
 module.exports = router;

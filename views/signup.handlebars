@@ -1,0 +1,32 @@
+{{!-- Sign up form --}}
+{{#if logged_in}}
+{{else}}
+<div class="create-account columns">
+    <form class="column is-6 is-offset-3">
+        <div class="title has-text-black">
+            <h2 class="title"> Create Account</h2>
+        </div>
+        {{!-- Username --}}
+        <div class="field has-text-black">
+            <label for="username">Username</label>
+            <input class="input is-primary" id="username-signup" type="text" placeholder="Username">
+        </div>
+        {{!-- password --}}
+        <div class="field has-text-black">
+            <label for="password">Password</label>
+            <input class="input is-primary" id="password-signup" type="password" placeholder="Password">
+        </div>
+        <div class="has-text-black">
+            <ul>
+                <li>▪️ 6 characters minimum</li>
+            </ul>
+        </div>
+        {{!-- sign up btn --}}
+        <div class="field mt-2">
+            <button class="button is-primary is-fullwidth" id="sign-up" type="submit">Register</button>
+        </div>
+    </form>
+</div>
+{{/if}}
+
+<script src="./js/signUp.js"></script>

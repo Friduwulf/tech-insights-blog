@@ -1,0 +1,30 @@
+<div class="login-account">
+    <form class="login-form">
+        <div class="title">
+            <h2 class="has-text-white"> Log in</h2>
+        </div>
+        {{#if messages.error}}
+        <div class="has-text-info has-background-success-light has-text-centered">{{messages.error}}</div>
+        {{/if}}
+        <div class="field">
+            <label for="username">Username</label>
+            <input class="input is-primary" id="username-login" name="username" type="text"
+                placeholder="Email address" required>
+        </div>
+        <div class="field">
+            <label for="password">Password</label>
+            <input class="input is-primary" id="password-login" name="password" type="password"
+                placeholder="Password" required>
+        </div>
+        <div class="field mt-6">
+            <button class="button is-black is-fullwidth login login-form" type="submit">Log in</button>
+        </div>
+        <div class="has-text-centered">
+            <p class="is-size-7"> Don't have an account? <a href="/signup" class="has-text-primary">Sign
+                    up</a>
+            </p>
+        </div>
+    </form>
+</div>
+
+<script src="./js/login.js"></script>
