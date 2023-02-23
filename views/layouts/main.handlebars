@@ -23,14 +23,14 @@
                     </a>
                     <p id="title" class="navbar-item level-item is-size-1 has-text-centered">{{title}}</p>
                     {{#if logged_in}}
-                    <a class="navbar-item level-item has-text-centered" id="logout">
+                    <a class="navbar-item level-item has-text-centered logout" id="logout">
                         Logout
                     </a>
                     {{else}}
                     <a class="navbar-item level-item has-text-centered" href="/signup" id="signup">
                         Sign Up
                     </a>
-                    <a class="navbar-item level-item has-text-centered is-primary" href="/login" id="logout">
+                    <a class="navbar-item level-item has-text-centered is-primary" href="/login" id="login">
                         Log In
                     </a>
                     {{/if}}
@@ -38,6 +38,9 @@
             </div>
         </header>
         {{{body}}}
+        {{#if logged_in}}
+        <script src="./js/logout.js"></script>
+        {{/if}}
     </body>
 </html>
         
