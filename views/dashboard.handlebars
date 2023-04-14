@@ -1,9 +1,9 @@
-{{!-- {{!-- <div class="container columns is-multiline">
+<div class="container columns is-multiline">
     {{#each plainUserPosts as |post| }}
         <button class="dashboard-post-button button column is-10 is-offset-2" value="{{this.id}}">
             <div class="columns is-8">
                 <div class="dashboard-post-title column is-4 has-text-left">
-                    {{this.title}}
+                    <a href="/post/{{this.id}}">{{this.title}}</a>
                 </div>
                 <div class="dashboard-post-date column is-4 is-offset-4 has-text-right">
                     {{this.date_created}}
@@ -11,8 +11,14 @@
             </div>
         </button>
     {{/each}}
-</div> --}}
+    <button class="dashboard-post-button button column is-2 is-offset-2">
+        <div class="columns is-2">
+            <div class="newPost dashboard-post-title column is-4 has-text-left">
+                <p>New Post</p>
+            </div>
+        </div>
+    </button>
 
-<button class="button test">Test</button>
+</div>
 
 <script src="./js/userPost.js"></script>

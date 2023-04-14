@@ -27,6 +27,30 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
+router.get('/post/:id', withAuth, async (req, res) => {
+    try{
+        const postData = await Post.findOne({
+            where:{
+                id: req.params.id
+            },
+            include: [{model: User}],
+        });
+        console.log(postData);
+        const post= postData.get({ plain: true });
+        title = 'Dashboard';
+        res.render('editpost', {
+            title,
+            logged_in: req.session.logged_in,
+            post
+        });
+    } catch (err) {
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
+
+router.get()
+
 //Send signup handlebars
 router.get('/signup', async (req, res) => {
     title = 'Sign Up';

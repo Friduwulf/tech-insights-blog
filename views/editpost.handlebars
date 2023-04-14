@@ -1,17 +1,16 @@
 <div>
-    {{editPost}}
-    <div class="card-container column is-8 is-offset-2"
+    <div class="card-container column is-8 is-offset-2">
         <div class="card">
             <div class="card-body">
                 <div class="media">
                     <div class="media-content columns level">
-                        <p class="post-title column is-4 has-text-weight-bold is-size-4">{{this.title}}</p>
-                        <p class="post-user column is-4 is-offset-4 has-text-right">Post by: {{this.user.username}}</p>
+                        <p class="post-title column is-4 has-text-weight-bold is-size-4">{{post.title}}</p>
+                        <p class="post-user column is-4 is-offset-4 has-text-right">Post by: {{post.user.username}}</p>
                     </div>
                 </div>
                 <div class="post-contents">
-                    <p>{{this.content}}</p>
-                    <p class="is-6">Date Posted: {{this.date_created}}</p>
+                    <p>{{post.content}}</p>
+                    <p class="is-6">Date Posted: {{post.date_created}}</p>
                 </div>
             </div>
         </div>
