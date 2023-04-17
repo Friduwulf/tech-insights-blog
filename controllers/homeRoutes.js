@@ -49,8 +49,6 @@ router.get('/post/:id', withAuth, async (req, res) => {
     }
 });
 
-// router.get()
-
 //Send signup handlebars
 router.get('/signup', async (req, res) => {
     title = 'Sign Up';
