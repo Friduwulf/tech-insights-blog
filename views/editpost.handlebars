@@ -1,18 +1,29 @@
-<div>
-    <div class="card-container column is-8 is-offset-2">
-        <div class="card">
-            <div class="card-body">
-                <div class="media">
-                    <div class="media-content columns level">
-                        <p class="post-title column is-4 has-text-weight-bold is-size-4">{{post.title}}</p>
-                        <p class="post-user column is-4 is-offset-4 has-text-right">Post by: {{post.user.username}}</p>
+<div class="card-container column is-8 is-offset-2">
+    <div class="card">
+        <div class="card-body">
+            </div>
+                <div class="field">
+                    <label class="label">Edit  Title</label>
+                    <div class="control">
+                        <input class="input" id="edit-post-title" type="text" placeholder="{{posts.title}}">
                     </div>
                 </div>
-                <div class="post-contents">
-                    <p>{{post.content}}</p>
-                    <p class="is-6">Date Posted: {{post.date_created}}</p>
+                <div class="field">
+                    <label class="label">Edit Post Content</label>
+                    <div class="control">
+                        <input class="input" id="edit-post-content" type="text" placeholder="{{posts.content}}">
+                    </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link" id="edit-post-submit">Submit</button>
+                    </div>
+                    <div class="control">
+                        <a class="button is-link is-light" href="/dashboard">Cancel</a>
+                    </div>
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
 </div>
+
+<script src="./js/editpost.js"></script>

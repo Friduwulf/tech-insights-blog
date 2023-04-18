@@ -8,34 +8,6 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name']
-                },
-                {
-                    model: Comment,
-                    attributes: [
-                        'id', 
-                        'comment_text', 
-                        'date_created',
-                        'user_id'
-                    ]
-            }],
-        });
-        res.status(200).json(postData);
-    } catch (error) {
-        res.status(500).json(error);
-        console.log(error);        
-    }
-});
-
-router.get('/activePost', withAuth, async (req, res) => {
-    try {
-        const postData = await Post.findByPk({
-            where: {
-                id: req.session.activePostId,
-            },
-            include: [
-                {
-                    model: User,
                     attributes: ['username']
                 },
                 {
@@ -46,7 +18,8 @@ router.get('/activePost', withAuth, async (req, res) => {
                         'date_created',
                         'user_id'
                     ]
-            }],
+            }
+        ],
         });
         res.status(200).json(postData);
     } catch (error) {

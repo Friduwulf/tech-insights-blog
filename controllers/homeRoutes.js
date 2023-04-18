@@ -13,11 +13,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
                 user_id: req.session.user_id
             },
         });
-        const plainUserPosts = postData.map((post) => post.get({ plain: true }));
-        console.log(plainUserPosts);
+        const posts = postData.map((post) => post.get({ plain: true }));
+        console.log(posts);
         title = 'Dashboard';
         res.render('dashboard', {
-            plainUserPosts,
+            posts,
             title,
             logged_in: req.session.logged_in
         });
@@ -27,7 +27,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
-router.get('/post/:id', withAuth, async (req, res) => {
+router.get('/editpost/:id', withAuth, async (req, res) => {
     try{
         const postData = await Post.findOne({
             where:{
@@ -36,17 +36,26 @@ router.get('/post/:id', withAuth, async (req, res) => {
             include: [{model: User}],
         });
         console.log(postData);
-        const post= postData.get({ plain: true });
-        title = 'Dashboard';
+        const posts= postData.get({ plain: true });
+        title = 'Edit Post';
         res.render('editpost', {
             title,
             logged_in: req.session.logged_in,
-            post
+            posts
         });
     } catch (err) {
         res.status(500).json(err);
         console.log(err);
     }
+});
+
+//Send newpost handlebars
+router.get('/newpost', withAuth, async (req, res) => {
+    title = 'New Post';
+    res.render('newpost', { 
+        title,
+        logged_in: req.session.logged_in 
+    });   
 });
 
 //Send signup handlebars

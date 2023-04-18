@@ -3,6 +3,14 @@
     --weird-brown: #006d77;
 }
 
+a {
+    color: var(--bluey);
+}
+
+.login-text{
+    color: var(--weird-brown)
+}
+
 * {
     font-family: 'Montserrat', sans-serif;
 }
@@ -70,3 +78,4 @@ html, body {
     box-shadow: 5px 5px 2px 2px rgb(158, 181, 184);
     max-width: fit-content;
 }
+
