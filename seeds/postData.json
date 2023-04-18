@@ -1,17 +1,17 @@
 [
     {
-        "title": "Test",
-        "content": "This is test data for the posts",
-        "data_created": "2020-01-01"
+        "title": "I love cheese",
+        "content": "Cheese is the best! change my mind",
+        "data_created": "2020-01-05"
     },
     {
-        "title": "Test2",
-        "content": "This is test data for the posts",
+        "title": "This app is cool",
+        "content": "I just started using this app, hopefully it continues to grow!",
         "data_created": "2021-01-01"
     },
     {
-        "title": "Test3",
-        "content": "This is test data for the posts",
+        "title": "Turtles",
+        "content": "I like turtles",
         "data_created": "2023-01-01"
     }
 ]
