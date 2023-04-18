@@ -41,10 +41,16 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 router.put('/:id', withAuth, async (req, res) => {
+    console.log("Attempting to update post")
+    const title = req.body.title;
+    const content = req.body.content;
+
     try {
-        const updatePost = await Post.update(req.body, {
+        const updatePost = await Post.update(
+            { title,content },
+            {
             where: {
-                id: req.params.id,
+                id: req.body.post_id,
                 user_id: req.session.user_id,
             },
         });
@@ -52,10 +58,10 @@ router.put('/:id', withAuth, async (req, res) => {
             res.status(404).json({ message: 'No post found with this id!' });
             return;
         }
+        console.log('Post updated successfully')
         res.status(200).json(updatePost);
     } catch (error) {
-        res.status(500).json(error);
-        console.log(error);        
+        res.status(500).json(error);      
     }
 });
 
